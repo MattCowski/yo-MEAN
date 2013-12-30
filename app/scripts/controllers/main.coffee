@@ -1,31 +1,15 @@
 # 'use strict'
 
-# angular.module('angularFullstackApp')
-#   .controller 'MainCtrl', ($scope, $http) ->
-#     $scope.foo = "fooooo"
-    # $http.get('/api/awesomeThings').success (awesomeThings) ->
-    #   $scope.awesomeThings = awesomeThings
-
 angular.module('angularFullstackApp')
 .controller 'MainCtrl',
   class Controller
-    constructor: (@$http) ->
+    constructor: ($http, $scope) ->
       setThings = =>
-        # @contactService.get().then (results) =>
-        @$http.get('/api/awesomeThings').success (awesomeThings) ->
-          # @contacts = results
-          @awesomeThings = awesomeThings
+
       @foo = "foobarss"
-      @$http.get('/api/awesomeThings').success (awesomeThings) ->
-        @awesomeThings = awesomeThings
-      # @alertMe = ->
-      #   setTimeout ->
-      #     alert "You've selected the alert tab!"
+      $http.get('/api/awesomeThings').success (awesomeThings) ->
+        $scope.awesomeThings = awesomeThings
 
-
-      # @navType = "pills"
-
-# app = angular.module 'angularFullstackApp', []
 
 .controller 'TodoCtrl',
   class TodoCtrl

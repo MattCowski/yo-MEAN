@@ -11,6 +11,9 @@ angular.module('angularFullstackApp', [
       .when '/',
         templateUrl: 'partials/main'
         controller: 'MainCtrl'
+      .when '/myroute',
+        templateUrl: 'partials/myroute'
+        controller: 'MyrouteCtrl'
       .otherwise
         redirectTo: '/'
     $locationProvider.html5Mode(true)
